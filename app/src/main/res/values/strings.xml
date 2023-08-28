@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ToDoList</string>
+    <string name="language">Language</string>
+    <string name="expired">Exp : 3 years</string>
 </resources>

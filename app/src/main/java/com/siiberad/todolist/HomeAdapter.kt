@@ -18,7 +18,14 @@ class HomeAdapter(private val items: List<Language>) : RecyclerView.Adapter<Home
         with(holder) {
             with(items[position]) {
                 binding.tvLangName.text = name
-                binding.tvExp.text = exp
+                binding.cbList.isChecked = isDone
+                binding.cbList.setOnCheckedChangeListener { _, isChecked ->
+                    if (isChecked) {
+                        // Do something when the checkbox is checked
+                    } else {
+                        // Do something when the checkbox is unchecked
+                    }
+                }
             }
         }
     }

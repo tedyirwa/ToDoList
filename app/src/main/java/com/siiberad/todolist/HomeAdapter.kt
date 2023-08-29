@@ -1,11 +1,12 @@
 package com.siiberad.todolist
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.siiberad.todolist.databinding.SingleItemBinding
 
-class HomeAdapter(private val items: List<Language>) : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
+class HomeAdapter(private val items: MutableList<Language>) : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
 
     inner class ViewHolder(val binding: SingleItemBinding) :RecyclerView.ViewHolder(binding.root)
 
@@ -28,6 +29,12 @@ class HomeAdapter(private val items: List<Language>) : RecyclerView.Adapter<Home
                 }
             }
         }
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun insertItem(language: Language) {
+        items.add(language)
+        notifyDataSetChanged()
     }
 
     override fun getItemCount(): Int {
